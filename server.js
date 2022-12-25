@@ -7,7 +7,13 @@ const app = express();
 
 connectDB();
 
+// Init Middleware
+app.use(express.json({ extended: false }));
+
 app.get('/', (req, res) => res.send({ msg: 'Library app coming soon' }));
+
+app.use('/api/books', require('./routes/books'));
+app.use('/api/books', require('./routes/users'));
 
 const PORT = process.env.PORT || 5003;
 

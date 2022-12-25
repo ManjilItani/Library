@@ -1,13 +1,13 @@
 const { default: mongoose } = require('mongoose');
 
-const mongoose = requre('mongoose');
+// const mongoose = requre('mongoose');
 
 const BookSchema = mongoose.Schema({
   book: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'books',
   },
-  name: {
+  book_name: {
     type: String,
     required: true,
   },
@@ -17,7 +17,7 @@ const BookSchema = mongoose.Schema({
   },
   available: {
     type: Boolean,
-    default: True,
+    default: true,
   },
   date: {
     type: Date,
